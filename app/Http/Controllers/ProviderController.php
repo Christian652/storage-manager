@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Provider;
 use App\Storage;
+use App\StorageHistoric;
 use Illuminate\Http\Request;
 
 class ProviderController extends Controller
@@ -115,7 +116,20 @@ class ProviderController extends Controller
 
         $storage->save();
 
+        $historic = new StorageHistoric();
+        $historic->product_id = $product->id;
+        $historic->provider_id = $request->provider;
+        $historic->amount = $request->amount;
+        $historic->save();
+
         return redirect()->route('providers.show', ['provider'=>$request->provider]);
 
+    }
+
+    public function historic(Provider $provider)
+    {
+        $historics = StorageHistoric::all()->where('provider_id','=',$provider->id);
+
+        return view('admin.providerHistorics', ['provider'=>$provider, 'historics'=>$historics]);   
     }
 }

@@ -33,7 +33,9 @@
                             <td>{{date('d/m/y', strtotime($storage->updated_at))}}</td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a href="{{route('storages.saleForm', ['storage'=>$storage->id])}}" class="text-decoration-none btn btn-outline-secondary btn-sm">Vender</a>
+                                    <a href="{{route('storages.saleForm', ['storage'=>$storage->id])}}" class="text-decoration-none btn btn-outline-primary btn-sm">Vender</a>
+
+                                    <a href="{{route('storages.historic', ['storage'=>$storage->id])}}" class="text-decoration-none btn btn-primary btn-sm">Historico De Vendas</a>
                                 </div>
                             </td>
                         </tr>

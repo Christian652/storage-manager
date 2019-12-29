@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\SaleHistoric;
 use App\Storage;
 use Illuminate\Http\Request;
 
@@ -106,6 +107,19 @@ class StorageController extends Controller
         $storage->amount -= $request->amount;
         $storage->save();
 
+        $historic = new SaleHistoric();
+        $historic->product_id = $storage->product()->first()->id;
+        $historic->amount = $request->amount;
+        $historic->save();
+
         return redirect()->route('storages.index');
+    }
+
+    public function historic(Storage $storage)
+    {
+        $product = $storage->product()->first();
+        $historics = SaleHistoric::all()->where('product_id','=',$product->id);
+
+        return view('admin.SaleHistoric', ['storage'=>$storage, 'product'=>$product, 'historics'=>$historics]);
     }
 }

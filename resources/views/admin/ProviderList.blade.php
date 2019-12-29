@@ -41,6 +41,8 @@
                                         </form>
                                     </a>
                                     <a href="{{route('providers.edit', ['provider'=>$provider->id])}}" class="text-decoration-none btn btn-success btn-sm">Editar</a>
+
+                                    <a href="{{route('providers.historic', ['provider'=>$provider->id])}}" class="text-decoration-none btn btn-secondary btn-sm">Historico</a>
                                 </div>
                             </td>
                         </tr>
