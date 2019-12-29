@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('/', 'admin.index')->name('index');
+Route::get('/', 'SiteController@index')->name('index');
 
 Route::resource('Fornecedores','ProviderController')->names('providers')->parameters(["Fornecedores"=>'provider']);
 Route::get('Fornecedores/Fornecer-lote/{provider}', 'ProviderController@storeLote')->name('providers.storages');

@@ -1,5 +1,7 @@
 {
     "/admin/css/bootstrap.css": "/admin/css/bootstrap.css",
     "/admin/js/bootstrap.js": "/admin/js/bootstrap.js",
-    "/admin/js/jquery.js": "/admin/js/jquery.js"
+    "/admin/js/jquery.js": "/admin/js/jquery.js",
+    "/admin/js/sidebar.js": "/admin/js/sidebar.js",
+    "/admin/css/style.css": "/admin/css/style.css"
 }
