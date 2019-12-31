@@ -20,8 +20,12 @@
     </nav>
 
     <div class="d-flex">
-        <aside class="sidebar">
+        <aside class="sidebar bg-sidebar">
             <ul class="list-unstyled text-white">
+                <li>
+                    <a href="{{route('index')}}" class="lead">Inicio</a>
+                </li>
+
                 <li>
                     <a href="{{route('providers.index')}}" class="lead">Fornecedores</a>
                 </li>
@@ -33,14 +37,10 @@
                 <li>
                     <a href="{{route('products.index')}}" class="lead">Produtos</a>
                 </li>
-
-                <li>
-                    <a href="{{route('index')}}" class="lead">Inicio</a>
-                </li>
             </ul>
         </aside>
 
-        <div class="content w-100">
+        <div class="content w-100 p-1">
             <div class="list-group-item">
             @yield('content')
             </div>

@@ -31,6 +31,11 @@ class ProviderController extends Controller
         return view('admin.ProviderCreateForm');
     }
 
+    public function createProduct(Provider $provider)
+    {
+        return view('admin.ProductCreateForm', ['provider'=>$provider]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

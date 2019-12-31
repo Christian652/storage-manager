@@ -104,14 +104,16 @@ class StorageController extends Controller
 
     public function sale(Request $request, Storage $storage)
     {
-        $storage->amount -= $request->amount;
-        $storage->save();
+        if($storage->amount >= $request->amount):
+            $storage->amount -= $request->amount;
+            $storage->save();
 
-        $historic = new SaleHistoric();
-        $historic->product_id = $storage->product()->first()->id;
-        $historic->amount = $request->amount;
-        $historic->save();
-
+            $historic = new SaleHistoric();
+            $historic->product_id = $storage->product()->first()->id;
+            $historic->amount = $request->amount;
+            $historic->save();
+        endif;
+        
         return redirect()->route('storages.index');
     }
 

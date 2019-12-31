@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container mt-3">
-        <h1 class="display-4 text-center">Historico De Vendas De {{$product->name}}</h1>
+        <h1 class="display-4" style="font-size: 2em;">Historico De Vendas De {{$product->name}}</h1>
 
         <div class="row">
             <div class="col-12">

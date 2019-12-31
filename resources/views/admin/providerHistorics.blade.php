@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container mt-3">
-        <h1 class="display-4 text-center">Historico De Lotes Fornecidos Por {{$provider->name}}</h1>
+        <h1 class="display-4" style="font-size: 2em;">Historico De Lotes Fornecidos Por {{$provider->name}}</h1>
 
         <div class="row">
             <div class="col-12">
@@ -20,8 +20,7 @@
                             Em:
                             {{date('d/m/y h-m-s', strtotime($historic->created_at))}} <br>
                             Foram Fornecidas {{$historic->amount}} Unidades de <br>
-                            {{$historic->product()->first()->name}}
-                            
+                            <span class="lead">{{$historic->product()->first()->name}}</span>
                             
                         </div>
                     </div>

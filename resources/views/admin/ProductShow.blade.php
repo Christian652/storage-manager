@@ -11,7 +11,7 @@
         <div class="col-8 offset-2">
             <div class="card">
                 <div class="card-header">
-                    <h1 class="display-4 text-center">Vizualizar {{$product->name}}</h1>
+                    <h1 class="display-4 text-center" style="font-size: 2em;">Vizualizar {{$product->name}}</h1>
                 </div>
 
                 <ul class="list-group">

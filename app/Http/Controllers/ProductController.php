@@ -28,9 +28,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $providers = Provider::all();
+        // $providers = Provider::all();
 
-        return view('admin.ProductCreateForm', ['providers'=>$providers]);
+        // return view('admin.ProductCreateForm', ['providers'=>$providers]);
+
+        return redirect()->route('site.index');
     }
 
     /**
@@ -56,7 +58,7 @@ class ProductController extends Controller
 
         $storage->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('providers.index');
     }
 
     /**
@@ -115,12 +117,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $storage = new Storage();
-        $storage = $storage->all()->where('product_id','=',$product->id)->first();
+        $storage = Storage::all()->where('product_id','=',$product->id)->first();
 
         if($storage->amount === 0):
 
-            $product->delete();
+            // $product->delete();
 
         endif;
 

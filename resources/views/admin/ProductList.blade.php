@@ -38,15 +38,6 @@
                                 <div class="btn-group">
                                     <a href="{{route('products.show', ['product'=>$product->id])}}" class="text-decoration-none btn btn-info btn-sm">Vizualizar</a>
                                     
-                                    <a href="#" class="text-decoration-none">
-                                        <form action="{{route('products.destroy', ['product'=>$product->id])}}" method="post">
-                                            @csrf
-                                            @method('delete')
-
-                                            <button class="btn btn-danger btn-sm">Deletar</button>
-                                        </form>
-                                    </a>
-                                    
                                     <a href="{{route('products.edit', ['product'=>$product->id])}}" class="text-decoration-none btn btn-success btn-sm">Editar</a>
                                 </div>
                             </td>
@@ -55,8 +46,6 @@
                         @endforeach
                     </tbody>           
                 </table>
-
-                <a href="{{route('products.create')}}" class="btn btn-outline-primary mt-3">Cadastrar Produto</a>
             </div>
         </div>
     </div>

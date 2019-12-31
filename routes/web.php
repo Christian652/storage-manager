@@ -16,6 +16,7 @@ Route::get('/', 'SiteController@index')->name('index');
 Route::resource('Fornecedores','ProviderController')->names('providers')->parameters(["Fornecedores"=>'provider']);
 Route::get('Fornecedores/Fornecer-lote/{provider}', 'ProviderController@storeLote')->name('providers.storages');
 Route::get('Fornecedores/HistoricoDeFornecimento/{provider}', 'ProviderController@historic')->name('providers.historic');
+Route::get('Fornecedores/CadastroDeProduto/{provider}', 'ProviderController@createProduct')->name('providers.createProduct');
 Route::put('Fornecedores/Fornecer-lote/Fornecer', 'ProviderController@storeLoteProvide')->name('providers.saveLote');
 
 

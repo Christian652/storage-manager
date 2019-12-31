@@ -29,6 +29,9 @@
                                     <td>{{$product->name}}</td>
                                     <td>{{$product->description}}</td>
                                     <td class="text-success">{{$product->unitprice}}$</td>
+                                    <td>
+                                        <a href="{{route('products.edit', ['product'=>$product->id])}}" class="btn btn-success btn-sm">Editar</a>
+                                    </td>
                                 </tr>
 
                                 @endforeach
@@ -39,7 +42,10 @@
                             <div class="btn-group">
                                 <a href="{{route('providers.index')}}" class="btn btn-primary">Voltar</a>
 
+                                @if(!empty($products))
                                 <a href="{{route('providers.storages', ['provider'=>$provider->id])}}" class="btn btn-outline-primary">Fornecer Lote</a>
+                                @endif
+                                <a href="{{route('providers.createProduct', ['provider'=>$provider->id])}}" class="btn btn-primary">Cadastrar Produto</a>
                             </div>
                         </li>
                     </ul>

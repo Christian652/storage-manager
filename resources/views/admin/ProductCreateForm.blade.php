@@ -8,10 +8,10 @@
 
 <div class="container mt-4">
         <div class="row">
-            <div class="col-8 offset-2">
+            <div class="col-10 offset-1">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="lead text-center" style="font-size: 2.4em;">Cadastrar Novo Produto</h1>
+                        <h1 class="lead text-center" style="font-size: 2.4em;">Cadastrar Novo Produto de - {{$provider->name}}</h1>
                         <hr>
                         <form action="{{route('products.store')}}" method="post">
                             @csrf
@@ -30,19 +30,11 @@
                                 <textarea name="description" rows="4" style="resize: none;" class="form-control" placeholder="Descrição"></textarea>
                             </div>
 
-                            <div class="form-group">
-                                <select name="provider_id" class="form-control">
-                                    @foreach($providers as $provider)
-
-                                    <option value="{{$provider->id}}">{{$provider->name}}</option>
-
-                                    @endforeach
-                                </select>
-                            </div>
+                            <input type="hidden" name="provider_id" value="{{$provider->id}}">
 
                             <button class="btn btn-outline-primary">Cadastrar</button>
 
-                            <a href="{{route('products.index')}}" class="btn btn-outline-secondary">Voltar</a>
+                            <a href="{{route('providers.index')}}" class="btn btn-outline-secondary">Voltar</a>
                         </form>
                     </div>
                 </div>
